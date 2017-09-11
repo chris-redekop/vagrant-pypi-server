@@ -1,0 +1,9 @@
+[Unit]
+Description=PyPi Server
+
+[Service]
+ExecStart=/usr/local/bin/pypi-server -p 8080 -P . -a . /packages
+ExecStop=/usr/bin/killall pypi-server
+
+[Install]
+WantedBy=multi-user.target
